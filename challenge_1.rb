@@ -11,11 +11,12 @@ def firefox_browse
   browser.button(:name => 'btnG').click
 
   # selects the first link (cardinal solutions homepage in this case)
-  browser.h3s(:class => 'r')[0].click
+  binding.pry
+  browser.h3(:class => 'r').link.click
 
   # navigates to the 'careers' section of CS page and puts the necessary text
   browser.link(:href => '/careers').click
-  answer = browser.div(:class => 'hp-slideshow-caption-title').p[0].text
+  answer = browser.div(:class => 'hero-text bg-blue').text
   puts answer
 end
 
