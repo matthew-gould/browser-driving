@@ -1,9 +1,9 @@
 require 'watir-webdriver'
 require 'pry'
 
-def firefox_browse
+def chrome_browse
   # opens new instance of google in Firefox
-  browser = Watir::Browser.new :firefox
+  browser = Watir::Browser.new :chrome
   browser.goto 'http://google.com'
 
   # enters text into search field and clicks submit button
@@ -20,4 +20,4 @@ def firefox_browse
   puts answer
 end
 
-firefox_browse
+chrome_browse
