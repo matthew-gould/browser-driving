@@ -7,11 +7,11 @@ class GoogleSearch
 
   browser = Watir::Browser.new :chrome
   # browser = Watir::Browser.new(ENV['BROWSER_TYPE'].to_sym)
-  browser.window.resize_to('1200', '1000')
+  browser.window.resize_to('1200', '900')
   browser.goto 'http://google.com'
 
-  text_field(:search, :id => 'search')
-  button(:submit, :value => 'submit')
+  text_field(:search, :id => 'lst-ib')
+  button(:submit, :value => 'Search')
 
   google_search = GoogleSearch.new(browser)
   google_search.search= 'cardinal solutions'
