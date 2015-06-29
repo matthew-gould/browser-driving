@@ -12,7 +12,7 @@ def browse
     return
   end
 
-  # opens new instance of google in Firefox
+  # opens new instance of google
   browser = Watir::Browser.new(arg)
   browser.goto 'http://google.com'
 
