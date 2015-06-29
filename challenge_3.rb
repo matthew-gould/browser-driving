@@ -3,17 +3,17 @@ require 'pry'
 
 def browse
   # takes the browser type (chrome or firefox) on the command line
-  if ARGV[0] == "chrome"
-    arg = :chrome
-  elsif ARGV[0] == "firefox"
-    arg = :firefox
-  else
-    puts "You didn't make a valid choice"
-    return
-  end
+  # if ARGV[0] == "chrome"
+  #   arg = :chrome
+  # elsif ARGV[0] == "firefox"
+  #   arg = :firefox
+  # else
+  #   puts "You didn't make a valid choice"
+  #   return
+  # end
 
   # opens new instance of google
-  browser = Watir::Browser.new(arg)
+  browser = Watir::Browser.new(ENV['BROWSER_TYPE'].to_sym)
   browser.window.resize_to('1200', '1000')
   browser.goto 'http://google.com'
 
