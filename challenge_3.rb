@@ -14,6 +14,7 @@ def browse
 
   # opens new instance of google
   browser = Watir::Browser.new(arg)
+  browser.window.resize_to('1200', '1000')
   browser.goto 'http://google.com'
 
   # enters text into search field and clicks submit button
@@ -31,3 +32,5 @@ def browse
 end
 
 browse
+
+# browser.window.resize_to(800, 600)
