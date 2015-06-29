@@ -32,5 +32,3 @@ def browse
 end
 
 browse
-
-# browser.window.resize_to(800, 600)
