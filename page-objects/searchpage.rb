@@ -19,15 +19,15 @@ class SearchPage
 
   def navigate_to_link
     Watir::Wait.until {self.text.include? 'cardinal' }
-    self.cardinal
+    cardinal
   end
 
   def go_to_careers
-    self.careers
+    careers
   end
 
   def get_text
-    text = self.answer
+    text = answer
     puts text
   end
 end
