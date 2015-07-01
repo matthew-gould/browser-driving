@@ -9,6 +9,8 @@ class SearchPage
   button(:submit, :value => 'Search')
   button(:submit2, :value => 'Google Search')
   link(:cardinal, :text => 'Cardinal Solutions | IT Consulting | Technology Solutions')
+  link(:careers, :href => '/careers')
+  h1(:answer, :text => 'We employ smart people and keep them happy.')
 
   def search
     self.search= 'cardinal solutions'
@@ -19,6 +21,15 @@ class SearchPage
     Watir::Wait.until {self.text.include? 'cardinal' }
     self.cardinal
   end
+
+  def go_to_careers
+    self.careers
+  end
+
+  def get_text
+    text = self.answer
+    puts text
+  end
 end
 
 browser = Watir::Browser.new :chrome
@@ -28,3 +39,5 @@ browser.goto 'http://google.com'
 my_page_object = SearchPage.new(browser)
 my_page_object.search
 my_page_object.navigate_to_link
+my_page_object.go_to_careers
+my_page_object.get_text
