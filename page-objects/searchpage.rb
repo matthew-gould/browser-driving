@@ -22,10 +22,12 @@ class SearchPage
     cardinal
   end
 
+  # this should be a different page-object (cardinalhome)
   def go_to_careers
     careers
   end
 
+  # this should also be a different page-object (cardinalcareers)
   def get_text
     text = answer
     puts text
