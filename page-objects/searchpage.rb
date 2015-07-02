@@ -9,37 +9,14 @@ class SearchPage
   button(:submit, :value => 'Search')
   button(:submit2, :value => 'Google Search')
   link(:cardinal, :text => 'Cardinal Solutions | IT Consulting | Technology Solutions')
-  link(:careers, :href => '/careers')
-  h1(:answer, :text => 'We employ smart people and keep them happy.')
 
-  def search
-    self.search= 'cardinal solutions'
+  def search(phrase)
+    self.search= phrase
     (self.submit?) ? (self.submit) : (self.submit2)
   end
 
   def navigate_to_link
-    Watir::Wait.until {self.text.include? 'cardinal' }
+    Watir::Wait.until {self.text.include? 'cardinal'}
     cardinal
   end
-
-  # this should be a different page-object (cardinalhome)
-  def go_to_careers
-    careers
-  end
-
-  # this should also be a different page-object (cardinalcareers)
-  def get_text
-    text = answer
-    puts text
-  end
 end
-
-browser = Watir::Browser.new :chrome
-browser.window.resize_to('1100', '850')
-browser.window.move_to(0,0)
-browser.goto 'http://google.com'
-my_page_object = SearchPage.new(browser)
-my_page_object.search
-my_page_object.navigate_to_link
-my_page_object.go_to_careers
-my_page_object.get_text

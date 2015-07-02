@@ -1,10 +1,13 @@
 require 'watir-webdriver'
 require 'page-object'
 require 'pry'
-require './googlesearch.rb'
 
-class CardinalHome < SearchPage
+class CardinalHome
   include PageObject
 
   link(:careers, :href => '/careers')
+
+  def go_to_careers
+    self.careers
+  end
 end
