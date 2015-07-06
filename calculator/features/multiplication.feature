@@ -1,16 +1,17 @@
 Feature: Multiplication
 
   Scenario: multiplying integers together yields an integer
-    Given I have 2 integers
-    And I multiply them together
+    When I multiply two integers together
     Then I should get back an integer
 
+  Scenario: multiplying 2 integers yields the same result no matter what the order
+    When I multiply two integers
+    Then I will get back the same result no matter the order
+
   Scenario: multiplying integers yeilds the same result no matter what the order
-    Given I have 2 or more integers
-    And I multuply them together
-    Then I will get back the same product no matter the order of operation
+    When I multuply three or more integers together
+    Then I will get back the same result no matter the order
 
   Scenario: multiplying an integer by 1 yields itself
-    Given I have an integer
-    And I multuply that integer by 1
+    When I multuply an integer by 1
     Then I will get back that integer

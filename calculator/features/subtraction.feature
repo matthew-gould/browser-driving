@@ -18,4 +18,4 @@ Feature: Subtraction
 
   Scenario: subtracting an integer from itself yields zero
     When I subtract an integer from itself
-    Then I should get back zero
+    Then the result should be zero
