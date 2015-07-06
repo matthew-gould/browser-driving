@@ -14,7 +14,7 @@ Feature: adding-zero
 
 Feature: sum-order
 
-  Scenario: the order of integers being added doesn't matter
+  Scenario: the order of integers being added doesnt matter
     Given I have 2 or more integers
     And I add them together
     Then I should get the same integer regardless of how they are added
@@ -32,4 +32,18 @@ Feature: subtracting-zero
     Given I have an integer
     And I am subtractin zero from the integer
     Then I should get back the original integer
+
+Feature: subtraction-order
+
+  Scenario: when subtracting the order of integers matters
+    Given I have 2 or more integers
+    And I am subtracting them
+    Then The order or the integers should change the outcome
+
+Feature: subtraction-same-integer
+
+  Scenario: subtracting an integer from itself yields zero
+    Given I have an integer
+    And I subtract the same integer
+    Then I should get back zero
 
