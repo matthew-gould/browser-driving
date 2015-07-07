@@ -12,7 +12,7 @@ Feature: Subtraction
     When I am subtracting two integers
     Then the order of the integers should change the result
 
-  Scenario: The order of three or mroe integers matters
+  Scenario: The order of three or more integers matters
     When I am subtracting three or more integers
     Then the order of the integers should change the result
 
