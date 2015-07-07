@@ -1,18 +1,18 @@
 class Calculator
 
-  def add(*numbers)
+  def self.add(*numbers)
     numbers.inject(:+)
   end
 
-  def subtract(*numbers)
+  def self.subtract(*numbers)
     numbers.inject(:-)
   end
 
-  def multiply(*numbers)
+  def self.multiply(*numbers)
     numbers.reduce(:*)
   end
 
-  def divide(*numbers)
+  def self.divide(*numbers)
     numbers.reduce(:/)
   end
 
