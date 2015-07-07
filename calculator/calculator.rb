@@ -1,17 +1,19 @@
 class Calculator
 
-  def add(numbers*)
-    numbers.inject { |sum, x| sum += x }
+  def add(*numbers)
+    numbers.inject(:+)
   end
 
-  def subtract(numbers*)
-    numbers.inject { |dif, x| dif -= x }
+  def subtract(*numbers)
+    numbers.inject(:-)
   end
 
-  def multiply(numbers*)
+  def multiply(*numbers)
+    numbers.reduce(:*)
   end
 
-  def divide(numbers*)
+  def divide(*numbers)
+    numbers.reduce(:/)
   end
 
 end
