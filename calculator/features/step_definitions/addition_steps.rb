@@ -4,7 +4,7 @@ When /^I am adding (\d+) and (\d+)$/ do |arg1, arg2|
   expect(sum == 3)
 end
 
-When /^I am adding (\d+) and (\d+)$/ do |arg1, arg2|
+When /^I am adding zero (\d+) and (\d+)$/ do |arg1, arg2|
   sum = Calculator.add(arg1, arg2)
   
   expect(sum == 1)
