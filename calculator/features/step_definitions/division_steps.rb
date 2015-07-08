@@ -43,10 +43,13 @@ Then /^the result should probably be (\d+)$/ do |num1|
 end
 
 When /^I divide all of (\d+) by (\d+)$/ do |num1, num2|
-  @num1 = num1.to_i
-  @num2 = num2.to_i
+  begin
+    Calculator.divide(num1.to_i, num2.to_i)
+  rescue => error
+    @error = error
+  end
 end
 
 Then /^it should raise an error$/ do
-  expect{Calculator.divide(@num1, @num2)}.to raise_error(ZeroDivisionError)
+  expect(@error).not_to eq(nil)
 end
