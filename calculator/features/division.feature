@@ -14,7 +14,7 @@ Feature: Division
 
   Scenario: Zero divided by an integer returns zero
     When I divide 0 by 5
-    Then the result should be 0
+    Then the result should probably be 0
 
   Scenario: An integer divided by zero raises an error
     When I divide all of 5 by 0
