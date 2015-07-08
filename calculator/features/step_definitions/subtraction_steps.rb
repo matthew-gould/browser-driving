@@ -15,8 +15,11 @@ Then /^I should definitely get back (\d+)$/ do |num3|
 end
 
 When /^I am doing (\d+) minus (\d+)$/ do |num1, num2|
-  @dif = Calculator.subtract(num1.to_i, num2.to_i)
-  @dif2 = Calculator.subtract(num2.to_i, num1.to_i)
+  num1 = num1.to_i
+  num2 = num2.to_i
+
+  @dif = Calculator.subtract(num1, num2)
+  @dif2 = Calculator.subtract(num2, num1)
 end
 
 Then /(-\d+) and the second is (\d+)$/ do |num3,num4|
@@ -25,9 +28,13 @@ Then /(-\d+) and the second is (\d+)$/ do |num3,num4|
 end
 
 When /^I am subtracting (\d+), (\d+) and (\d+)$/ do |num1, num2, num3|
-  @dif = Calculator.subtract(num1.to_i, num2.to_i, num3.to_i)
-  @dif2 = Calculator.subtract(num2.to_i, num3.to_i, num1.to_i)
-  @dif3 = Calculator.subtract(num3.to_i, num1.to_i, num2.to_i)
+  num1 = num1.to_i
+  num2 = num2.to_i
+  num3 = num3.to_i
+
+  @dif = Calculator.subtract(num1, num2, num3)
+  @dif2 = Calculator.subtract(num2, num3, num1)
+  @dif3 = Calculator.subtract(num3, num1, num2)
 end
 
 Then /^the order of the integers should change the result$/ do
