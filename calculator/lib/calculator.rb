@@ -1,4 +1,4 @@
-module Calculator
+class Calculator
 
   def self.add(*numbers)
     numbers.inject(:+)

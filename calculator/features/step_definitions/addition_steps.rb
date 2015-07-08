@@ -19,7 +19,7 @@ When /^I add (\d+) and (\d+)$/ do |num1, num2|
   @sum2 = Calculator.add(num2, num1)
 end
 
-Then /^I should get a (\d+) regardless of how they are ordered$/ do |num3|
+Then /^I should get back (\d+) regardless of how they are ordered$/ do |num3|
   expect(@sum == num3)
   expect(@sum2 == num3)
 end

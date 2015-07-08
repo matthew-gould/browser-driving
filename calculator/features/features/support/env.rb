@@ -1,1 +1,2 @@
-# require '/c/Users/mgould/Documents/GitHub/browser-driving/lib/calculator.rb'
+require_relative '../../../lib/calculator.rb'
+require 'pry'
