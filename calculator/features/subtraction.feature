@@ -9,13 +9,13 @@ Feature: Subtraction
     Then I should definitely get back 1
 
   Scenario: The order of two integers matters
-    When 7 minus 3
-    Then 3 minus 7 should give me -4 and 7 minus 3 should give me 4
+    When I am doing 3 minus 7
+    Then the first result is -4 and the second is 4
 
   Scenario: The order of three or more integers matters
     When I am subtracting 1, 2 and 3
     Then the order of the integers should change the result
 
   Scenario: Subtracting an integer from itself yields zero
-    When I subtract the same 3 from 3
+    When I subtract 3 from itself
     Then the result of this equation should be 0
