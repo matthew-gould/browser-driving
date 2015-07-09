@@ -1,21 +1,27 @@
 Feature: Division
+  
+  Scenario: Division is dependent on operation order
+    When I divide 2 into 4
+    Then I receive 2
 
-  Scenario: The result of dividing two numbers depends on their order
-    When I am dividing 6 by a certain 3
-    Then the order of operations will change the result
+    When I divide 4 into 2
+    Then I receive 0.5
 
-  Scenario: The result of dividing multiple numbers depends on their order
-    When I am dividing 12 by 3 by 2
-    Then the order of operations will change the result
+  Scenario: Division is dependent on grouping
+    When I divide 4 and 2 into 2
+    Then I receive 0.25
 
-  Scenario: Dividing an integer by one yields the integer
-    When I divide 3 by the number 1
-    Then the result should be 3
+    When I divide 2 and 2 into 4
+    Then I receive 1
 
-  Scenario: Zero divided by an integer returns zero
-    When I divide 0 by 5
-    Then the result should probably be 0
+  Scenario: Dividing by 1
+    When I divide 1 into 2
+    Then I receive 2
 
-  Scenario: An integer divided by zero raises an error
-    When I divide all of 5 by 0
-    Then it should raise an error
+  Scenario: Dividing zero
+    When I divide 2 into 0
+    Then I receive 0
+
+  Scenario: Dividing by 0
+    When I divide 0 into 2
+    Then I see an error

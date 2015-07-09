@@ -1,21 +1,28 @@
 Feature: Subtraction
 
-  Scenario: Subtracting two integers returns an integer
-    When 3 minus 1
-    Then I should absolutely get back 2
+  Scenario: Closure principle
+    When I subtract 1 from 2
+    Then an integer is returned
+    
+  Scenario: Subtracting zero from an integer
+    When I subtract 0 from 1
+    Then I receive 1
 
-  Scenario: Subtracting zero from an integer yields the integer
-    When doing 1 minus 0
-    Then I should definitely get back 1
+  Scenario: Subtraction is dependent on operation order
+    When I subtract 1 from 2
+    Then I receive 1
 
-  Scenario: The order of two integers matters
-    When I am doing 3 minus 7
-    Then the first result is -4 and the second is 4
+    When I subtract 2 from 1
+    Then I receive -1
 
-  Scenario: The order of three or more integers matters
-    When I am subtracting 1, 2 and 3
-    Then the order of the integers should change the result
+  Scenario: Subtraction is dependent on grouping
+    When I subtract 2 and 1 from 3
+    Then I receive 0
 
-  Scenario: Subtracting an integer from itself yields zero
-    When I subtract 3 from itself
-    Then the result of this equation should be 0
+    When I subtract 3 and 2 from 1
+    Then I receive -4
+
+  Scenario: Subtracting self returns zero
+    When I subtract 3 from 3
+    Then I receive 0
+
