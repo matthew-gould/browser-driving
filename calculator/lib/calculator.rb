@@ -1,19 +1,21 @@
 class Calculator
+  class << self
+    
+    def add *n
+      n.map(&:to_i).inject(:+)
+    end
 
-  def self.add(*numbers)
-    numbers.inject(:+)
+    def subtract *n
+      n.map(&:to_i).inject(:-)
+    end
+
+    def multiply *n
+      n.map(&:to_i).reduce(:*)
+    end
+
+    def divide *n
+      n.map(&:to_i).reduce(:/)
+    end
+    
   end
-
-  def self.subtract(*numbers)
-    numbers.inject(:-)
-  end
-
-  def self.multiply(*numbers)
-    numbers.reduce(:*)
-  end
-
-  def self.divide(*numbers)
-    numbers.reduce(:/)
-  end
-
 end
